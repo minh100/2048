@@ -120,7 +120,7 @@ export default class Game {
                         let didWin = boardAsCols.flat().includes(2048);
 
                         if (didWin) {
-                            this.gameState.board = boardAsCols.flat();
+                            this.gameState.board = rearrangeBoardFromColsToRows(boardAsCols, this.size).flat();
                             handleWin(this.gameState, this.moveCallback, this.winCallback); // handles win process
                         } else {
 
@@ -249,7 +249,7 @@ chances[0] = 4;
 
     if (filteredBoard.length !== 0) {
         const randomIndex = filteredBoard[Math.floor(Math.random() * filteredBoard.length)];  // get rand index
-        board[randomIndex] = randomChoice;
+        board[randomIndex] = 256;
     }
 
     return board;
