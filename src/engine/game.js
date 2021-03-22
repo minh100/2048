@@ -249,7 +249,7 @@ chances[0] = 4;
 
     if (filteredBoard.length !== 0) {
         const randomIndex = filteredBoard[Math.floor(Math.random() * filteredBoard.length)];  // get rand index
-        board[randomIndex] = 256;
+        board[randomIndex] = randomChoice;
     }
 
     return board;
