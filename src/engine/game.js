@@ -444,6 +444,7 @@ chances[0] = 4;
  */
  export function handleWin(gameState, moveCallback, winCallback) {
     gameState.won = true;
+    addTile(gameState.board);
     moveCallback.forEach(callback => {
         callback(gameState);
     });

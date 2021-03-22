@@ -12,8 +12,9 @@ export const Tile = ({ value }) => {
 }
 
 function renderSwitch(value) {
-
     switch(value) {
+        case 0:
+            return <div className="tile-space px-6 py-9">{''}</div>;
         case 2:
             return <div className="tile-space bg-red-400"><span>{value}</span></div>;
         case 4:
@@ -37,6 +38,6 @@ function renderSwitch(value) {
         case 2048:
             return <div className="tile-space text-3xl bg-gray-100 text-black"><span>{value}</span></div>;
         default:
-            return <div className="tile-space px-6 py-9">{''}</div>;
+            return <div className="tile-space text-2xl px-6 py-9 bg-gradient-to-r from-green-400 to-blue-500">{value}</div>;
     }
 };
