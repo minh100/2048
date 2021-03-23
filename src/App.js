@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Game from './engine/game.js';
 import { Tile } from './Components/Tile.js';
 
@@ -53,8 +53,14 @@ function App() {
     updateBoard(gameModel.gameState.board);
   }
 
+  useEffect( () => {
+    divRef.current.focus();
+  }, [])
+
+  const divRef = useRef();
+
   return (
-    <div className="outer-container bg-primary flex flex-wrap content-center justify-center text-center" tabIndex="1" onKeyDown={handleMove}>
+    <div ref={divRef} className="outer-container bg-primary flex flex-wrap content-center justify-center text-center" tabIndex="1" onKeyDown={handleMove}>
       <div className="space-y-6">
         <h1 className="text-5xl font-black font-title">2048</h1>
         <div className="inner-container">
